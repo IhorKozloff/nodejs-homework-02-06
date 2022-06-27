@@ -1,6 +1,7 @@
 const fs = require('fs/promises')
 const path = require("path");
 const createId = require('../utils/idGenerator');
+// const Contact = require('../models/contact');
 
 const contactsPath = path.join(__dirname, "contacts.json");
 
