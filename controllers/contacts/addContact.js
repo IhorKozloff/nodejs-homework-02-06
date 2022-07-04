@@ -2,13 +2,11 @@ const { Contact } = require('../../models/contact');
 
 const addContact = async (req, res, next) => {
 
-  // const {error} = schemas.addSchema.validate(req.body)
+  const {_id: owner} = req.user;
 
-  // if (error){
-  //   throw createError(400, `Bad Request: ${error}`);
-  // }
-  const result = await Contact.create(req.body);
+  const result = await Contact.create({...req.body, owner});
   res.status(201).json(result);
+
 }
 
 module.exports = addContact;
